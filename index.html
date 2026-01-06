@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STEM Scientific Research Center - Technology, Engineering, Science, Math">
+    <title>STEM - Ғылыми-зерттеу орталығы</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="STEM Logo" class="logo" style="width: 120px !important; height: 120px !important;" onerror="this.style.display='none'">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-translate="navHome">Басты бет</a></li>
+                <li><a href="#about" data-translate="navAbout">Біз туралы</a></li>
+                <li><a href="#directions" data-translate="navDirections">Ғылыми бағыттар</a></li>
+                <li><a href="#team" data-translate="navTeam">Команда</a></li>
+                <li><a href="#activity" data-translate="navActivity">Ғылыми қызмет</a></li>
+                <li><a href="#base" data-translate="navBase">Материалдық база</a></li>
+                <li><a href="#services" data-translate="navServices">Қызметтер</a></li>
+                <li><a href="#seminar" data-translate="navSeminar">Семинар</a></li>
+                <li><a href="#contact" data-translate="navContact">Байланыс</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="language-selector">
+                    <button onclick="changeLanguage('kk')" class="lang-btn active" data-lang="kk">ҚАЗ</button>
+                    <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">РУС</button>
+                    <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">ENG</button>
+                    <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TÜR</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" data-translate="heroTitle">Ғылыми-зерттеу орталығы «STEM»</h1>
+            <p class="hero-subtitle" data-translate="heroSubtitle">Технология · Инженерия · Ғылым · Математика</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary" data-translate="btnLearnMore">Толығырақ</a>
+                <a href="#contact" class="btn btn-secondary" data-translate="btnContact">Байланысу</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <h2 class="section-title" data-translate="aboutTitle">Біз туралы</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 data-translate="goalTitle">Мақсат</h3>
+                    <p data-translate="goalText">STEM білім беру саласында инновациялық зерттеулер жүргізу және ғылыми-техникалық әлеуетті дамыту.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 data-translate="missionTitle">Миссия</h3>
+                    <p data-translate="missionText">Білім мен инновацияны біріктіру арқылы келер ұрпақ үшін озық технологиялар мен ғылыми жетістіктерді қамтамасыз ету.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 data-translate="tasksTitle">Міндеттер</h3>
+                    <ul class="tasks-list" data-translate="tasksList">
+                        <li>Ғылыми зерттеулер жүргізу</li>
+                        <li>Инновациялық жобаларды әзірлеу</li>
+                        <li>Халықаралық ынтымақтастық</li>
+                        <li>Жас ғалымдарды дайындау</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions Section -->
+    <section id="directions" class="directions-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="directionsTitle">Ғылыми бағыттар</h2>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 data-translate="techTitle">Технология</h3>
+                    <p data-translate="techDesc">Жаңа технологиялар мен инновациялық шешімдерді зерттеу және әзірлеу</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 data-translate="engTitle">Инженерия</h3>
+                    <p data-translate="engDesc">Инженерлік жүйелер мен құрылымдарды жобалау және жетілдіру</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 data-translate="scienceTitle">Ғылым</h3>
+                    <p data-translate="scienceDesc">Фундаменталдық және қолданбалы ғылыми зерттеулер</p>
+                </div>
+                <div class="direction-card">
+                    <div class="direction-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3 data-translate="mathTitle">Математика</h3>
+                    <p data-translate="mathDesc">Математикалық модельдеу және алгоритмдерді әзірлеу</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section section">
+        <div class="container">
+            <h2 class="section-title" data-translate="teamTitle">Біздің команда</h2>
+            <p class="section-subtitle" data-translate="teamSubtitle">Кәсіби мамандар тобы</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/member1.jpg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 data-translate="member1Name">Әміров Әлібек Серікұлы</h4>
+                    <p class="member-position" data-translate="member1Position">Орталық директоры, PhD</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/member2.jpg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 data-translate="member2Name">Нұрланова Айгүл Қанатқызы</h4>
+                    <p class="member-position" data-translate="member2Position">Ғылыми қызметкер, PhD</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/member3.jpg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 data-translate="member3Name">Бекенов Нұрлан Асқарұлы</h4>
+                    <p class="member-position" data-translate="member3Position">Жоба жетекшісі, MSc</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="images/team/member4.jpg" alt="Team Member">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 data-translate="member4Name">Сейітова Дана Ермекқызы</h4>
+                    <p class="member-position" data-translate="member4Position">Аға зерттеуші, PhD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Activity Section -->
+    <section id="activity" class="activity-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="activityTitle">Ғылыми қызмет</h2>
+            <div class="activity-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'monographs')" data-translate="tabMonographs">Монографиялар</button>
+                <button class="tab-btn" onclick="openTab(event, 'patents')" data-translate="tabPatents">Патенттер</button>
+                <button class="tab-btn" onclick="openTab(event, 'manuals')" data-translate="tabManuals">Оқу құралдары</button>
+                <button class="tab-btn" onclick="openTab(event, 'publications')" data-translate="tabPublications">Жарияланымдар</button>
+            </div>
+
+            <div id="monographs" class="tab-content active">
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h4 data-translate="mono1Title">STEM білім берудің қазіргі заманғы әдістері</h4>
+                            <p data-translate="mono1Details">Авторлар: Әміров Ә.С., Нұрланова А.Қ. | 2024 жыл | 245 бет</p>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h4 data-translate="mono2Title">Инновациялық технологиялар білім беруде</h4>
+                            <p data-translate="mono2Details">Авторлар: Бекенов Н.А., Сейітова Д.Е. | 2023 жыл | 312 бет</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="patents" class="tab-content">
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4 data-translate="patent1Title">Интерактивті оқыту жүйесі</h4>
+                            <p data-translate="patent1Details">Патент №12345 | 2024 жыл | ҚР ҰӘК</p>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4 data-translate="patent2Title">STEM зертханасы үшін модульдік жүйе</h4>
+                            <p data-translate="patent2Details">Патент №12346 | 2023 жыл | ҚР ҰӘК</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="manuals" class="tab-content">
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4 data-translate="manual1Title">STEM педагогикасының негіздері</h4>
+                            <p data-translate="manual1Details">Оқу құралы | 2024 жыл | ISBN 978-601-xxx-xxx-x</p>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4 data-translate="manual2Title">Робототехника және бағдарламалау</h4>
+                            <p data-translate="manual2Details">Оқу құралы | 2023 жыл | ISBN 978-601-xxx-xxx-x</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="publications" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>150+</h3>
+                        <p data-translate="statPublications">Ғылыми жарияланымдар</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>45</h3>
+                        <p data-translate="statScopus">Scopus/WoS мақалалар</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>25</h3>
+                        <p data-translate="statConferences">Халықаралық конференциялар</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material Base Section -->
+    <section id="base" class="base-section section">
+        <div class="container">
+            <h2 class="section-title" data-translate="baseTitle">Материалдық-техникалық база</h2>
+            <div class="base-grid">
+                <div class="base-item">
+                    <img src="images/lab1.jpg" alt="Laboratory">
+                    <div class="base-content">
+                        <h3 data-translate="lab1Title">Робототехника зертханасы</h3>
+                        <p data-translate="lab1Desc">Заманауи робототехникалық жүйелер мен жабдықтар</p>
+                    </div>
+                </div>
+                <div class="base-item">
+                    <img src="images/lab2.jpg" alt="Laboratory">
+                    <div class="base-content">
+                        <h3 data-translate="lab2Title">3D модельдеу орталығы</h3>
+                        <p data-translate="lab2Desc">3D принтерлер мен CAD жүйелері</p>
+                    </div>
+                </div>
+                <div class="base-item">
+                    <img src="images/lab3.jpg" alt="Laboratory">
+                    <div class="base-content">
+                        <h3 data-translate="lab3Title">Компьютерлік зертхана</h3>
+                        <p data-translate="lab3Desc">Жоғары өнімді компьютерлер мен бағдарламалық қамтамасыз ету</p>
+                    </div>
+                </div>
+                <div class="base-item">
+                    <img src="images/lab4.jpg" alt="Laboratory">
+                    <div class="base-content">
+                        <h3 data-translate="lab4Title">Инженерлік зертхана</h3>
+                        <p data-translate="lab4Desc">Өлшеу аспаптары мен зерттеу жабдықтары</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="servicesTitle">Көрсетілетін қызметтер</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3 data-translate="service1Title">Оқыту және тренингтер</h3>
+                    <p data-translate="service1Desc">STEM саласы бойынша оқытушылар мен студенттерге арналған кәсіби даму курстары</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-microscope"></i>
+                    <h3 data-translate="service2Title">Ғылыми зерттеулер</h3>
+                    <p data-translate="service2Desc">Тапсырыс бойынша ғылыми зерттеулер мен эксперименттік жұмыстар жүргізу</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 data-translate="service3Title">Жобалық консалтинг</h3>
+                    <p data-translate="service3Desc">Инновациялық жобаларды әзірлеу және іске асыруда кеңес беру</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3 data-translate="service4Title">Семинарлар және конференциялар</h3>
+                    <p data-translate="service4Desc">Ғылыми-практикалық семинарлар мен конференциялар ұйымдастыру</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3 data-translate="service5Title">Сертификаттау</h3>
+                    <p data-translate="service5Desc">STEM құзыреттілігі бойынша сертификаттау және аккредитация</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3 data-translate="service6Title">Техникалық қолдау</h3>
+                    <p data-translate="service6Desc">STEM жабдықтары мен бағдарламалық қамтамасыз етуге техникалық қолдау</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seminar Section -->
+    <section id="seminar" class="seminar-section section">
+        <div class="container">
+            <h2 class="section-title" data-translate="seminarTitle">Семинар туралы</h2>
+            <div class="seminar-content">
+                <div class="seminar-info">
+                    <h3 data-translate="seminarInfoTitle">Халықаралық ғылыми-практикалық семинар</h3>
+                    <div class="seminar-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong data-translate="seminarDate">Күні:</strong>
+                                <span data-translate="seminarDateValue">15-16 маусым, 2024</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong data-translate="seminarLocation">Орны:</strong>
+                                <span data-translate="seminarLocationValue">STEM орталығы, Алматы қ.</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong data-translate="seminarParticipants">Қатысушылар:</strong>
+                                <span data-translate="seminarParticipantsValue">200+ делегат</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 data-translate="seminarTopicsTitle">Негізгі тақырыптар:</h4>
+                    <ul class="topics-list" data-translate="seminarTopics">
+                        <li>STEM білім берудің инновациялық әдістері</li>
+                        <li>Цифрлық трансформация және білім беру</li>
+                        <li>Робототехника және AI білім беруде</li>
+                        <li>Халықаралық тәжірибе алмасу</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" data-translate="btnRegister">Тіркелу</a>
+                </div>
+                <div class="seminar-image">
+                    <img src="images/seminar.jpg" alt="Seminar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="contactTitle">Байланыс</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-translate="contactAddress">Мекенжай</h4>
+                            <p data-translate="contactAddressValue">Алматы қ., Әл-Фараби даңғылы, 71</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-translate="contactPhone">Телефон</h4>
+                            <p>+7 (727) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-translate="contactEmail">Email</h4>
+                            <p>info@stem-center.kz</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4 data-translate="contactHours">Жұмыс уақыты</h4>
+                            <p data-translate="contactHoursValue">Дүйсенбі - Жұма: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Аты-жөніңіз" required data-translate-placeholder="formName">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required data-translate-placeholder="formEmail">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" required data-translate-placeholder="formPhone">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Хабарлама" required data-translate-placeholder="formMessage"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="btnSend">Жіберу</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4 data-translate="footerAbout">Орталық туралы</h4>
+                    <p data-translate="footerAboutText">STEM ғылыми-зерттеу орталығы - білім беру саласындағы инновациялар мен технологияларды дамытуға бағытталған ғылыми ұйым.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footerLinks">Пайдалы сілтемелер</h4>
+                    <ul>
+                        <li><a href="#about" data-translate="footerLinkAbout">Біз туралы</a></li>
+                        <li><a href="#directions" data-translate="footerLinkDirections">Ғылыми бағыттар</a></li>
+                        <li><a href="#team" data-translate="footerLinkTeam">Команда</a></li>
+                        <li><a href="#services" data-translate="footerLinkServices">Қызметтер</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="footerContact">Байланыс</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="footerContactAddress">Алматы қ., Әл-Фараби даңғылы, 71</span></li>
+                        <li><i class="fas fa-phone"></i> +7 (727) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@stem-center.kz</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 STEM <span data-translate="footerCopyright">Ғылыми-зерттеу орталығы. Барлық құқықтар қорғалған.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

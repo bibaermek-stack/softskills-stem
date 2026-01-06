@@ -172,3 +172,5 @@ Cfqn cnbv/
 Технология · Инженерия · Ғылым · Математика
 
 © 2024 STEM Research Center. Барлық құқықтар қорғалған."# softskills-stem" 
+"# softskills-stem" 
+"# softskills-stem" 
