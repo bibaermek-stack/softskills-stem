@@ -18,6 +18,13 @@ const translations = {
         heroSubtitle: "Технология · Инженерия · Ғылым · Математика",
         btnLearnMore: "Толығырақ",
         btnContact: "Байланысу",
+        
+        // Stats
+        statsTitle: "Біздің жетістіктеріміз",
+        statsStudents: "Оқытылған студенттер",
+        statsProjects: "Аяқталған жобалар",
+        statsAwards: "Марапаттар мен гранттар",
+        statsPartners: "Халықаралық серіктестер",
 
         // About Section
         aboutTitle: "Біз туралы",
@@ -86,7 +93,7 @@ const translations = {
         lab2Desc: "3D принтерлер мен CAD жүйелері",
         lab3Title: "Компьютерлік зертхана",
         lab3Desc: "Жоғары өнімді компьютерлер мен бағдарламалық қамтамасыз ету",
-        lab4Title: "Інженерлік зертхана",
+        lab4Title: "Инженерлік зертхана",
         lab4Desc: "Өлшеу аспаптары мен зерттеу жабдықтары",
 
         // Services Section
@@ -103,6 +110,14 @@ const translations = {
         service5Desc: "STEM құзыреттілігі бойынша сертификаттау және аккредитация",
         service6Title: "Техникалық қолдау",
         service6Desc: "STEM жабдықтары мен бағдарламалық қамтамасыз етуге техникалық қолдау",
+
+        // Partners & FAQ (NEW)
+        partnersTitle: "Біздің серіктестер",
+        faqTitle: "Жиі қойылатын сұрақтар",
+        faqQ1: "Орталыққа қалай жазылуға болады?",
+        faqA1: "Сайттағы \"Байланыс\" бөлімі арқылы немесе телефон арқылы хабарласыңыз.",
+        faqQ2: "Гранттық бағдарламалар бар ма?",
+        faqA2: "Иә, біз жыл сайын жас ғалымдарға арналған байқаулар жариялаймыз.",
 
         // Seminar Section
         seminarTitle: "Семинар туралы",
@@ -167,6 +182,13 @@ const translations = {
         heroSubtitle: "Технология · Инженерия · Наука · Математика",
         btnLearnMore: "Подробнее",
         btnContact: "Связаться",
+        
+        // Stats
+        statsTitle: "Наши достижения",
+        statsStudents: "Обученных студентов",
+        statsProjects: "Завершенных проектов",
+        statsAwards: "Награды и гранты",
+        statsPartners: "Международные партнеры",
 
         // About Section
         aboutTitle: "О нас",
@@ -253,6 +275,14 @@ const translations = {
         service6Title: "Техническая поддержка",
         service6Desc: "Техническая поддержка STEM оборудования и программного обеспечения",
 
+        // Partners & FAQ (NEW)
+        partnersTitle: "Наши партнеры",
+        faqTitle: "Часто задаваемые вопросы",
+        faqQ1: "Как записаться в центр?",
+        faqA1: "Свяжитесь с нами через раздел 'Контакты' на сайте или по телефону.",
+        faqQ2: "Есть ли грантовые программы?",
+        faqA2: "Да, мы ежегодно объявляем конкурсы для молодых ученых.",
+
         // Seminar Section
         seminarTitle: "О семинаре",
         seminarInfoTitle: "Международный научно-практический семинар",
@@ -316,6 +346,13 @@ const translations = {
         heroSubtitle: "Technology · Engineering · Science · Mathematics",
         btnLearnMore: "Learn More",
         btnContact: "Contact Us",
+
+        // Stats
+        statsTitle: "Our Achievements",
+        statsStudents: "Students Trained",
+        statsProjects: "Completed Projects",
+        statsAwards: "Awards & Grants",
+        statsPartners: "International Partners",
 
         // About Section
         aboutTitle: "About Us",
@@ -402,6 +439,14 @@ const translations = {
         service6Title: "Technical Support",
         service6Desc: "Technical support for STEM equipment and software",
 
+        // Partners & FAQ (NEW)
+        partnersTitle: "Our Partners",
+        faqTitle: "Frequently Asked Questions",
+        faqQ1: "How to register at the center?",
+        faqA1: "Contact us via the 'Contact' section on the website or by phone.",
+        faqQ2: "Are there grant programs?",
+        faqA2: "Yes, we announce competitions for young scientists annually.",
+
         // Seminar Section
         seminarTitle: "About the Seminar",
         seminarInfoTitle: "International Scientific and Practical Seminar",
@@ -465,6 +510,13 @@ const translations = {
         heroSubtitle: "Teknoloji · Mühendislik · Bilim · Matematik",
         btnLearnMore: "Daha Fazla Bilgi",
         btnContact: "İletişime Geç",
+
+        // Stats
+        statsTitle: "Başarılarımız",
+        statsStudents: "Eğitilen Öğrenciler",
+        statsProjects: "Tamamlanan Projeler",
+        statsAwards: "Ödüller ve Hibeler",
+        statsPartners: "Uluslararası Ortaklar",
 
         // About Section
         aboutTitle: "Hakkımızda",
@@ -551,6 +603,14 @@ const translations = {
         service6Title: "Teknik Destek",
         service6Desc: "STEM ekipmanları ve yazılımı için teknik destek",
 
+        // Partners & FAQ (NEW)
+        partnersTitle: "İş Ortaklarımız",
+        faqTitle: "Sıkça Sorulan Sorular",
+        faqQ1: "Merkeze nasıl kayıt olunur?",
+        faqA1: "Web sitemizdeki 'İletişim' bölümünden veya telefonla bize ulaşın.",
+        faqQ2: "Hibe programları var mı?",
+        faqA2: "Evet, her yıl genç bilim insanları için yarışmalar düzenliyoruz.",
+
         // Seminar Section
         seminarTitle: "Seminer Hakkında",
         seminarInfoTitle: "Uluslararası Bilimsel ve Pratik Seminer",
@@ -602,8 +662,10 @@ function changeLanguage(lang) {
     // Update active button
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
     });
-    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 
     // Update all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {

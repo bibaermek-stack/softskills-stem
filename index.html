@@ -33,7 +33,7 @@
                     <li><a href="#contact" data-translate="navContact">Байланыс</a></li>
                 </ul>
 
-                <!-- Mobile-only language selector (inside drawer) -->
+                <!-- Mobile-only language selector -->
                 <div class="site-nav__right site-nav__right--mobile">
                     <div class="lang-dropdown" data-variant="mobile">
                         <button class="lang-dropdown__trigger" type="button" aria-haspopup="menu" aria-expanded="false">
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <!-- Desktop language selector (fixed right) -->
+            <!-- Desktop language selector -->
             <div class="site-nav__right site-nav__right--desktop">
                 <div class="lang-dropdown" data-variant="desktop">
                     <button class="lang-dropdown__trigger" type="button" aria-haspopup="menu" aria-expanded="false">
@@ -83,6 +83,35 @@
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="statsTitle">Біздің жетістіктеріміз</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p data-translate="statsStudents">Оқытылған студенттер</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-flask"></i>
+                    <h3 class="counter" data-target="150">0</h3>
+                    <p data-translate="statsProjects">Аяқталған жобалар</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-award"></i>
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p data-translate="statsAwards">Марапаттар мен гранттар</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p data-translate="statsPartners">Халықаралық серіктестер</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -313,28 +342,28 @@
             <h2 class="section-title" data-translate="baseTitle">Материалдық-техникалық база</h2>
             <div class="base-grid">
                 <div class="base-item">
-                    <img src="images/lab1.jpg" alt="Laboratory">
+                    <img src="images/lab1.jpg" alt="Laboratory" onerror="this.style.display='none'">
                     <div class="base-content">
                         <h3 data-translate="lab1Title">Робототехника зертханасы</h3>
                         <p data-translate="lab1Desc">Заманауи робототехникалық жүйелер мен жабдықтар</p>
                     </div>
                 </div>
                 <div class="base-item">
-                    <img src="images/lab2.jpg" alt="Laboratory">
+                    <img src="images/lab2.jpg" alt="Laboratory" onerror="this.style.display='none'">
                     <div class="base-content">
                         <h3 data-translate="lab2Title">3D модельдеу орталығы</h3>
                         <p data-translate="lab2Desc">3D принтерлер мен CAD жүйелері</p>
                     </div>
                 </div>
                 <div class="base-item">
-                    <img src="images/lab3.jpg" alt="Laboratory">
+                    <img src="images/lab3.jpg" alt="Laboratory" onerror="this.style.display='none'">
                     <div class="base-content">
                         <h3 data-translate="lab3Title">Компьютерлік зертхана</h3>
                         <p data-translate="lab3Desc">Жоғары өнімді компьютерлер мен бағдарламалық қамтамасыз ету</p>
                     </div>
                 </div>
                 <div class="base-item">
-                    <img src="images/lab4.jpg" alt="Laboratory">
+                    <img src="images/lab4.jpg" alt="Laboratory" onerror="this.style.display='none'">
                     <div class="base-content">
                         <h3 data-translate="lab4Title">Инженерлік зертхана</h3>
                         <p data-translate="lab4Desc">Өлшеу аспаптары мен зерттеу жабдықтары</p>
@@ -383,6 +412,46 @@
         </div>
     </section>
 
+    <!-- Partners Section (NEW) -->
+    <section id="partners" class="partners-section section">
+        <div class="container">
+            <h2 class="section-title" data-translate="partnersTitle">Біздің серіктестер</h2>
+            <div class="partners-grid">
+                <div class="partner-logo"><i class="fas fa-university fa-3x"></i><p>KazNU</p></div>
+                <div class="partner-logo"><i class="fas fa-atom fa-3x"></i><p>Tech Institute</p></div>
+                <div class="partner-logo"><i class="fas fa-globe-asia fa-3x"></i><p>Global Science</p></div>
+                <div class="partner-logo"><i class="fas fa-book-reader fa-3x"></i><p>Edu Foundation</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (NEW) -->
+    <section id="faq" class="faq-section section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-translate="faqTitle">Жиі қойылатын сұрақтар</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-translate="faqQ1">Орталыққа қалай жазылуға болады?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faqA1">Сайттағы "Байланыс" бөлімі арқылы немесе телефон арқылы хабарласыңыз.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-translate="faqQ2">Гранттық бағдарламалар бар ма?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faqA2">Иә, біз жыл сайын жас ғалымдарға арналған байқаулар жариялаймыз.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seminar Section -->
     <section id="seminar" class="seminar-section section">
         <div class="container">
@@ -423,7 +492,7 @@
                     <a href="#contact" class="btn btn-primary" data-translate="btnRegister">Тіркелу</a>
                 </div>
                 <div class="seminar-image">
-                    <img src="images/seminar.jpg" alt="Seminar">
+                    <img src="images/seminar.jpg" alt="Seminar" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -463,6 +532,19 @@
                             <p data-translate="contactHoursValue">Дүйсенбі - Жұма: 9:00 - 18:00</p>
                         </div>
                     </div>
+                    
+                    <!-- Map Container (NEW) -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.776114256284!2d76.9096533154868!3d43.23514697913784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369346c48399f%3A0x6b4476692994966!2sAl-Farabi%20Avenue%2071%2C%20Almaty%20050040!5e0!3m2!1sen!2skz!4v1620000000000!5m2!1sen!2skz" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0; border-radius: 15px; margin-top: 20px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
                     <div class="social-media">
                         <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>

@@ -114,23 +114,25 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add('active');
 }
 
-// Back to top button
+// Back to top button (guarded)
 const backToTopBtn = document.getElementById('backToTop');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
-});
-
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
     });
-});
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Scroll animations
 const observerOptions = {
@@ -158,6 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+});
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
     });
 });
 
@@ -287,8 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => {
         img.addEventListener('error', function() {
             // Replace with placeholder
-            this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect fill="%23ddd" width="200" height="200"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16"%3EImage%3C/text%3E%3C/svg%3E';
-            this.alt = 'Placeholder';
+            // this.src = 'data:image/svg+xml,...'; // Optional: show a placeholder
+            // For now, we might just hide or leave alt text
         });
     });
 });
@@ -298,55 +309,40 @@ function printPage() {
     window.print();
 }
 
-// Share functionality (optional feature)
-function shareOnSocial(platform) {
-    const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(document.title);
+console.log('STEM Research Center - Updated Features Loaded!');
 
-    let shareUrl;
-    switch(platform) {
-        case 'facebook':
-            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-            break;
-        case 'twitter':
-            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-            break;
-        case 'linkedin':
-            shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
-            break;
-    }
-
-    if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-    }
-}
-
-// Search functionality (optional feature)
-function searchContent(query) {
-    if (!query) return;
-
-    const sections = document.querySelectorAll('section');
-    let found = false;
-
-    sections.forEach(section => {
-        const text = section.textContent.toLowerCase();
-        if (text.includes(query.toLowerCase())) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            found = true;
-            return;
-        }
+// Final-pass ASCII-safe fallbacks to avoid mojibake until UTF-8 is enforced
+document.addEventListener('DOMContentLoaded', () => {
+    try { document.title = 'STEM - Research Center'; } catch (_) {}
+    const lang = localStorage.getItem('preferredLanguage') || 'kk';
+    const asciiLabels = { kk: 'KAZ', ru: 'RUS', en: 'ENG', tr: 'TR' };
+    document.querySelectorAll('[data-lang-value]').forEach(el => {
+        el.textContent = asciiLabels[lang] || asciiLabels.kk;
     });
+    // Ensure all non-hero images are lazy if not marked
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+        if (!img.closest('.hero')) img.loading = 'lazy';
+    });
+});
 
-    if (!found) {
-        const currentLang = localStorage.getItem('preferredLanguage') || 'kk';
-        const messages = {
-            kk: 'Ештеңе табылмады',
-            ru: 'Ничего не найдено',
-            en: 'Nothing found',
-            tr: 'Hiçbir şey bulunamadı'
-        };
-        alert(messages[currentLang]);
-    }
+// --- Overrides and progressive enhancements ---
+// Redefine language label sync with clean labels
+function syncLangDropdownLabel() {
+    const lang = localStorage.getItem('preferredLanguage') || 'kk';
+    const labels = { kk: 'ҚАЗ', ru: 'РУС', en: 'ENG', tr: 'TR' };
+    document.querySelectorAll('[data-lang-value]').forEach(el => {
+        el.textContent = labels[lang] || labels.kk;
+    });
 }
 
-console.log('STEM Research Center - Website Loaded Successfully!');
+// Set a clean, localized-ish title and enable lazy-loading for non-hero images
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        document.title = 'STEM – Ғылыми-зерттеу орталығы';
+    } catch (e) { /* noop */ }
+
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+        const inHero = img.closest('.hero');
+        if (!inHero) img.loading = 'lazy';
+    });
+});
