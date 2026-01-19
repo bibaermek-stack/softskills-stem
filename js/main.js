@@ -1,21 +1,71 @@
-// Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// Mobile menu toggle (rebuilt nav)
+const nav = document.getElementById('siteNav');
+const navToggle = document.querySelector('.site-nav__toggle');
+const navMenu = document.getElementById('siteNavMenu');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close menu when clicking on a nav link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    // Close menu when clicking on a nav link (mobile)
+    navMenu.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+            navMenu.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
         });
     });
 }
+
+// Ensure horizontal nav starts from the left when it becomes scrollable
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelector('.site-nav__links');
+    if (navLinks) navLinks.scrollLeft = 0;
+});
+
+// Language dropdown
+function syncLangDropdownLabel() {
+    const lang = localStorage.getItem('preferredLanguage') || 'kk';
+    const labels = { kk: 'ҚАЗ', ru: 'РУС', en: 'ENG', tr: 'TÜR' };
+    document.querySelectorAll('[data-lang-value]').forEach(el => {
+        el.textContent = labels[lang] || 'ҚАЗ';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    syncLangDropdownLabel();
+
+    document.querySelectorAll('.lang-dropdown').forEach(drop => {
+        const trigger = drop.querySelector('.lang-dropdown__trigger');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = drop.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Close when selecting a language
+        drop.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                drop.classList.remove('is-open');
+                trigger.setAttribute('aria-expanded', 'false');
+                // changeLanguage() runs via onclick; update label after it saves to localStorage
+                setTimeout(syncLangDropdownLabel, 0);
+            });
+        });
+    });
+
+    // Close any open dropdown when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.lang-dropdown.is-open').forEach(drop => {
+            drop.classList.remove('is-open');
+            const trigger = drop.querySelector('.lang-dropdown__trigger');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -23,7 +73,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offset = 80; // navbar height
+            const offset = 90; // navbar height
             const targetPosition = target.offsetTop - offset;
             window.scrollTo({
                 top: targetPosition,
@@ -34,14 +84,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar background on scroll
-const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
+    if (!nav) return;
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = '#ffffff';
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        nav.style.background = 'rgba(255, 255, 255, 0.92)';
+        nav.style.boxShadow = 'none';
     }
 });
 
@@ -214,7 +264,7 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    document.querySelectorAll('.site-nav__links a').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
@@ -224,7 +274,7 @@ window.addEventListener('scroll', () => {
 
 // Prevent logo image error
 document.addEventListener('DOMContentLoaded', () => {
-    const logo = document.querySelector('.logo');
+    const logo = document.querySelector('.site-nav__logo');
     if (logo) {
         logo.addEventListener('error', function() {
             // If logo image fails to load, hide it
